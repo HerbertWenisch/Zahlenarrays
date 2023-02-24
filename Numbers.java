@@ -26,8 +26,14 @@ public class Numbers {
     // kleiner Gaus mit for-each:
     public int getSum1(){
         int sum = 0;
-        for(int value: numbers)
-           sum += value;
+        for(int number: numbers)
+           sum += number;
         return sum;   
+    }
+    
+    public boolean contains(int aNumber){
+        for(int number: numbers)
+            if(number == aNumber) return true;
+        return false;
     }
 }
