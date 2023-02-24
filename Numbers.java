@@ -3,14 +3,16 @@
  * @author (Herbert Wenisch)
  * @version (2-23-23)
  */
+import java.util.Random;
 
 public class Numbers {
     private int[] numbers;
+    private Random generator = new Random();
     
     public Numbers(){
         numbers = new int[101]; // von 0 bis 100
         for(int i=1; i < numbers.length; i++) 
-            numbers[i] = i;
+            numbers[i] = generator.nextInt(100) + 1;
     }
     
     // kleiner Gauss:
