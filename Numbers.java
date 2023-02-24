@@ -5,15 +5,20 @@
  */
 import java.util.Random;
 
+// Umbau zur Lotterie:
 public class Numbers {
-    final int N = 10;
+    final int N = 6;
     private int[] numbers;
     private Random generator = new Random();
     
     public Numbers(){
         numbers = new int[N+1]; // von 0 bis N
-        for(int i=1; i < numbers.length; i++) 
-            numbers[i] = generator.nextInt(100) + 1;
+        for(int i=1; i < numbers.length; i++) {
+            int number = generator.nextInt(48) + 1;
+            while(contains(number)) 
+               number = generator.nextInt(48) + 1;
+            numbers[i]= number;   
+        }  
     }
     
     // kleiner Gauss:
