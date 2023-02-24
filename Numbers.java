@@ -6,11 +6,12 @@
 import java.util.Random;
 
 public class Numbers {
+    final int N = 10;
     private int[] numbers;
     private Random generator = new Random();
     
     public Numbers(){
-        numbers = new int[101]; // von 0 bis 100
+        numbers = new int[N+1]; // von 0 bis N
         for(int i=1; i < numbers.length; i++) 
             numbers[i] = generator.nextInt(100) + 1;
     }
@@ -42,5 +43,13 @@ public class Numbers {
         for(int number: numbers)
             if(number == aNumber) count++;
         return count;    
+    }
+    
+    // zur Abwechslung eine index-orientiere Suche:
+    public int max(){
+        int max = 1;
+        for(int i = 1; i < numbers.length; i++)
+            if(numbers[i] > max) max = numbers[i];
+        return max;    
     }
 }
