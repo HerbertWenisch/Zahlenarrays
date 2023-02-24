@@ -36,4 +36,11 @@ public class Numbers {
             if(number == aNumber) return true;
         return false;
     }
+    
+    public int howMuch(int aNumber){
+        int count = 0;
+        for(int number: numbers)
+            if(number == aNumber) count++;
+        return count;    
+    }
 }
